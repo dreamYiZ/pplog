@@ -1,27 +1,27 @@
 let disable = false;
 
-function RLog(...args) {
+function pplog(...args) {
   if (args.length > 1) {
     for (let v of args) {
-      RLog(v);
+      pplog(v);
     }
-    return RLog;
+    return pplog;
   }
 
   disable || console.log(...args);
 
-  return RLog;
+  return pplog;
 }
 
-function disableRLog() {
+function disablepplog() {
   disable = true;
 }
 
-function enableRLog() {
+function enablepplog() {
   disable = false;
 }
 
 
-module.exports =RLog;
-module.exports.disableRLog = disableRLog;
-module.exports.enableRLog = enableRLog;
+module.exports = pplog;
+module.exports.disablepplog = disablepplog;
+module.exports.enablepplog = enablepplog;
