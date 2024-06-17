@@ -1,26 +1,26 @@
 let disable = false;
 let showTime = false;
 
-function pplog(...args) {
+function ppplog(...args) {
   if (args.length > 1) {
     for (let v of args) {
-      pplog(v);
+      ppplog(v);
     }
-    return pplog;
+    return ppplog;
   }
 
   if (!disable) {
     showTime ? console.log(new Date(), ...args) : console.log(...args);
   }
 
-  return pplog;
+  return ppplog;
 }
 
-function disablepplog() {
+function disableppplog() {
   disable = true;
 }
 
-function enablepplog() {
+function enableppplog() {
   disable = false;
 }
 
@@ -33,8 +33,8 @@ function disableTime() {
 }
 
 
-module.exports = pplog;
-module.exports.disablepplog = disablepplog;
-module.exports.enablepplog = enablepplog;
+module.exports = ppplog;
+module.exports.disableppplog = disableppplog;
+module.exports.enableppplog = enableppplog;
 module.exports.enableTime = enableTime;
 module.exports.disableTime = disableTime;
