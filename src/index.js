@@ -2,13 +2,6 @@ let disable = false;
 let showTime = false;
 
 function ppplog(...args) {
-  if (args.length > 1) {
-    for (let v of args) {
-      ppplog(v);
-    }
-    return ppplog;
-  }
-
   if (!disable) {
     showTime ? console.log(new Date(), ...args) : console.log(...args);
   }
@@ -18,20 +11,23 @@ function ppplog(...args) {
 
 function disableppplog() {
   disable = true;
+  return ppplog; // return ppplog to support chaining
 }
 
 function enableppplog() {
   disable = false;
+  return ppplog; // return ppplog to support chaining
 }
 
 function enableTime() {
   showTime = true;
+  return ppplog; // return ppplog to support chaining
 }
 
 function disableTime() {
   showTime = false;
+  return ppplog; // return ppplog to support chaining
 }
-
 
 module.exports = ppplog;
 module.exports.disableppplog = disableppplog;
