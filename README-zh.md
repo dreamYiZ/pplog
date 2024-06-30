@@ -1,5 +1,7 @@
 # ppplog
 
+`ppplog` 一键开关所有console.log。
+
 `ppplog` 是一个简单的日志库，它提供了一种方便的方式来控制你的日志输出。
 
 ## 安装
